@@ -1,0 +1,16 @@
+{
+  "name": "team-task-manager-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo root scripts for deploying Team Task Manager to cloud platforms",
+  "main": "backend/server.js",
+  "scripts": {
+    "install-backend": "npm install --prefix backend",
+    "install-client": "npm install --prefix client",
+    "build-client": "npm run build --prefix client",
+    "build": "npm run install-backend && npm run install-client && npm run build-client",
+    "start": "cross-env NODE_ENV=production node backend/server.js"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
